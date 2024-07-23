@@ -1,10 +1,15 @@
-import cds, { Request, Service, } from '@sap/cds';
-
 import '../configuration/module-alias';
+
+import cds, { Request, Service, } from '@sap/cds';
 
 import { db } from '@/common/entities/db/models';
 
 export default (service: Service) => {
+    service.before('READ', 'PurchaseOrderHeaders', (request: Request) => {
+        if (request.user.is('ROLE_DUMMY_ADMIN')) {
+            return request.reject(403, 'Não autorizado');
+        }
+    });
     service.after('READ', 'PurchaseOrderHeaders', (results: db.models.PurchaseOrderHeaders[], request: Request) => {
         results.forEach(poHeader => poHeader.company = 'ABC');
     });
