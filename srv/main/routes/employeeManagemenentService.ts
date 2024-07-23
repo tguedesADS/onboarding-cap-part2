@@ -5,6 +5,13 @@ import cds, { Request, Service } from '@sap/cds'
 import { db } from '@/common/entities/db/models'
 
 export default (service: Service) => {
+    // service.before('READ', 'Employees', (request: Request) => {
+    //         console.log(request.user.roles)
+    //         if (!request.user.is('ROLE_HR_ADMIN')) {
+    //             return request.reject(403, 'Não autorizado');
+    //         }
+    //     });
+
     service.before('CREATE', 'Employees', async (request: Request) => {
         const swapi = await cds.connect.to('swapi');
         const person = await swapi.send({

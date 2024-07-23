@@ -17,9 +17,25 @@
               "email": ["dummy@dummy.com"],
               "Groups": ["DUMMY_GROUPS"]
             }
-          }
+          },
+          "teste": {
+            "password": "teste123",
+            "roles": ["ROLE_TEST_USER"],
+            "userAttributes": {
+              "email": ["teste@test.com"],
+              "Groups": ["DUMMY_GROUPS"]
+            }
+          },
+          "thalia": {
+            "password": "thalia",
+            "roles": ["ROLE_HR_ADMIN"],
+            "userAttributes": {
+              "email": ["thalia@test.com"],
+              "Groups": ["DUMMY_GROUPS"]
+            }
         }
-      },
+      }
+    },
       "swapi": {
         "kind": "rest",
         "credentials": {
