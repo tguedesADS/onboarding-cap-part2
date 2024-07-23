@@ -1,0 +1,30 @@
+## Exercício Teórico - Segurança e Autorização no CAP
+
+### 1 - Explique a diferença entre autenticação e autorização no contexto do SAP CAP.
+
+Autenticação: Verificar a identidade de um usuário (quem é você?)
+Autorização: Determinar quais recursos um usuário autenticado pode acessar (o que você pode fazer?)
+Ambos são fundamentais para garantir a segurança e a integridade dos dados em sua aplicação SAP CAP.
+
+### 2 - Descreva o papel do arquivo .cdsrc.json na configuração de segurança de um aplicativo CAP.
+
+O arquivo .cdsrc.json é um arquivo de configuração fundamental para a segurança do aplicativo CAP. Ele define as configurações de segurança e autenticação para o aplicativo, protegendo os recursos contra acessos não autorizados e implementando a autenticação e autorização para os usuários do aplicativo.
+
+### 3 - O que significa uma role no contexto de segurança de um aplicativo? Dê um exemplo.
+
+ Uma role é uma forma de agrupar permissões e direitos de acesso em uma única entidade, tornando mais fácil gerenciar a segurança do aplicativo.
+
+Exemplo: Desenvolvendo um aplicativo de gerenciamento de estoque para uma empresa de comércio eletrônico. Nesse aplicativo, podemos definir as seguintes roles:
+
+Administrador: Tem permissão para gerenciar todos os aspectos do aplicativo, incluindo a criação de novos usuários, a gestão de estoque, a configuração de preços, etc.
+Gerente de Estoque: Tem permissão para gerenciar o estoque, incluindo a adição e remoção de produtos, a atualização de quantidades, etc.
+Vendedor: Tem permissão para visualizar o estoque e realizar vendas, mas não pode gerenciar o estoque ou configurar preços.
+
+### 4 - Explique como a anotação @requires funciona para restringir o acesso em um serviço no SAP CAP.
+
+Quando um usuário tenta acessar o serviço OrderService, o SAP CAP verifica se o usuário tem a role OrderManager atribuída. Se o usuário não tiver essa role, o acesso é negado e um erro de autorização é retornado.
+
+### 5 - Qual é o propósito da anotação @restrict e como ela difere de @requires?
+
+@requires, o propósito é exigir uma role ou permissão específica. Acesso é permitido se o usuário tiver a role ou permissão.
+@restrict, o propósito é restringir o acesso com base em critérios específicos.	Acesso negado se o usuário tiver a role ou permissão
